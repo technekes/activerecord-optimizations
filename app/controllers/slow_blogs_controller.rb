@@ -1,4 +1,4 @@
-class BlogsController < ApplicationController
+class SlowBlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   # GET /blogs

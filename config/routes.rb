@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
   resources :comments
   resources :users
-  resources :blogs
+  resources :slow_blogs
+  resources :fast_blogs
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'blogs#index'
+  root 'slow_blogs#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
