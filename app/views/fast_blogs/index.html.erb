@@ -7,6 +7,7 @@
     <tr>
       <th>Title</th>
       <th># of Comments</th>
+      <th>Better # of Comments</th>
       <th>Last Comment</th>
     </tr>
   </thead>
@@ -16,7 +17,8 @@
       <tr>
         <td><%= link_to blog.title, fast_blog_path(blog) %></td>
         <td><%= blog.comments.length %></td>
-        <td><%= blog.last_comment.body %></td>
+        <td><%= blog.comments_count %></td>
+        <td><%= blog.last_comment&.body %></td>
       </tr>
     <% end %>
   </tbody>
