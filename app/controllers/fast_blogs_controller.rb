@@ -67,7 +67,10 @@ class FastBlogsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog
+        .includes(:user)
+        .eager_load(:comments, :comments => :user)
+        .find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
