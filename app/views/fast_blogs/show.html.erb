@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fast</h1>
+<p>
+  <strong>Body:</strong>
+  <%= @blog.body %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @blog.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @blog.user.name %>
+</p>
+
+<ul>
+  <% @blog.comments.each do |comment| %>
+    <li>
+      <b><%= comment.user.name %>:</b>
+      <%= comment.body %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_fast_blog_path(@blog) %> |
+<%= link_to 'Back', fast_blogs_path %>
